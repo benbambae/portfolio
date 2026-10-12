@@ -69,7 +69,13 @@ code { font-family: var(--mono); font-size: .88em; background: var(--accent-soft
   margin-left: auto; width: 38px; height: 38px; border-radius: 10px; border: 1px solid var(--border);
   background: var(--surface); color: var(--text); cursor: pointer; display: grid; place-items: center;
 }
-@media (min-width: 760px) { .theme-toggle { margin-left: 8px; } }
+.lang-toggle {
+  margin-left: auto; height: 38px; padding: 0 12px; border-radius: 10px; border: 1px solid var(--border);
+  background: var(--surface); color: var(--text); cursor: pointer; font: inherit; font-size: 14px; font-weight: 600;
+}
+.lang-toggle:hover { background: var(--accent-soft); }
+.lang-toggle + .theme-toggle { margin-left: 0; }
+@media (min-width: 760px) { .lang-toggle { margin-left: 8px; } .theme-toggle { margin-left: 8px; } }
 .theme-toggle svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; }
 .i-moon { display: none; }
 :root[data-theme="dark"] .i-sun { display: none; }
@@ -162,6 +168,7 @@ h1 { font-size: clamp(2.5rem, 6vw, 4rem); line-height: 1.05; letter-spacing: -.0
 
 .projects { display: grid; gap: 16px; }
 @media (min-width: 860px) { .projects { grid-template-columns: 1fr 1fr; } }
+@media (min-width: 860px) { .project.wide { grid-column: 1 / -1; } }
 .project p { color: var(--muted); }
 .kicker { margin: 0 0 6px; font-family: var(--mono); font-size: 12.5px; color: var(--accent) !important; text-transform: uppercase; letter-spacing: .08em; }
 .project h3 { margin-bottom: 8px; }
@@ -185,7 +192,7 @@ h1 { font-size: clamp(2.5rem, 6vw, 4rem); line-height: 1.05; letter-spacing: -.0
   * { transition: none !important; }
 }
 @media print {
-  .topbar, .theme-toggle, .skip, .footer a { display: none; }
+  .topbar, .lang-toggle, .theme-toggle, .skip, .footer a { display: none; }
   body { background: #fff; }
   .card, .stat, .btn { box-shadow: none; }
 }
