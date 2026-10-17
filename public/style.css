@@ -70,6 +70,15 @@ code { font-family: var(--mono); font-size: .88em; background: var(--accent-soft
   background: var(--surface); color: var(--text); cursor: pointer; display: grid; place-items: center;
 }
 @media (min-width: 760px) { .theme-toggle { margin-left: 8px; } }
+.lang-toggle {
+  margin-left: auto; height: 38px; min-width: 38px; padding: 0 10px; border-radius: 10px; border: 1px solid var(--border);
+  background: var(--surface); color: var(--text); cursor: pointer; font: 600 13.5px/1 var(--font);
+}
+.lang-toggle:hover, .theme-toggle:hover { background: var(--accent-soft); }
+.lang-toggle + .theme-toggle { margin-left: 0; }
+@media (min-width: 760px) { .lang-toggle { margin-left: 8px; } }
+:lang(zh) { --font: ui-sans-serif, system-ui, -apple-system, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", "Noto Sans SC", "Segoe UI", Roboto, sans-serif; }
+:root:lang(zh) body { line-height: 1.75; }
 .theme-toggle svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; }
 .i-moon { display: none; }
 :root[data-theme="dark"] .i-sun { display: none; }
@@ -189,3 +198,4 @@ h1 { font-size: clamp(2.5rem, 6vw, 4rem); line-height: 1.05; letter-spacing: -.0
   body { background: #fff; }
   .card, .stat, .btn { box-shadow: none; }
 }
+.alt-name { display: inline-block; font-size: .5em; font-weight: 600; color: var(--muted); letter-spacing: 0; }
